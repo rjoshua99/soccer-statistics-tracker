@@ -30,8 +30,20 @@ if __name__ == "__main__":
     print(result["standings"][0]["table"][0])
 
     scorers_result = get_scorers()
-    print(scorers_result["count"])
+    print(scorers_result["scorers"])
 
     matches_result = get_matches()
-    print (matches_result["matches"][0])
+    #print (matches_result["matches"][0])
+
+    scorers_result = get_scorers()
+    for entry in scorers_result["scorers"]:
+        print(entry["type"])
+
+    print(matches_result["resultSet"])
+    print(len(matches_result["matches"]))
+
+    
+
+
+    
     
