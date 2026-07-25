@@ -39,11 +39,4 @@ if __name__ == "__main__":
     for entry in scorers_result["scorers"]:
         print(entry["type"])
 
-    print(matches_result["resultSet"])
-    print(len(matches_result["matches"]))
-
-    
-
-
-    
     
