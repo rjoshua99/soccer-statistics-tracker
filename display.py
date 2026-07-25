@@ -1,7 +1,7 @@
 def show_standings(data):
     table = data["standings"][0]["table"]
 
-    print(f"{'Pos':<5}{'Team:<25'}{'P:<5'}{'W':<5}{'D':<5'}{'L':<5}{'Pts':<5}")
+    print(f"{'Pos':<5}{'Team':<30}{'P':<5}{'W':<5}{'D':<5}{'L':<5}{'Pts':<5}")
 
     for team in table:
      position = team["position"]
@@ -12,7 +12,7 @@ def show_standings(data):
      lost = team["lost"]
      points = team["points"]
 
-     print(f"{position:<5}{name:<25}{played:<5}{won:<5}{draw:<5}{lost:<5}{points:<5}")
+     print(f"{position:<5}{name:<30}{played:<5}{won:<5}{draw:<5}{lost:<5}{points:<5}")
 
 
 def show_scorers(data):
@@ -36,8 +36,11 @@ if __name__ == "__main__":
   show_scorers(data)
 
 
-def show_matches(data):
+def show_matches(data, matchday=None):
     matches = data["matches"]
+
+    if matchday is not None:
+      matches = [match for match in matches if match["matchday"] == matchday]
 
     for match in matches:
        matchday = match["matchday"]
